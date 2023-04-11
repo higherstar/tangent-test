@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,4 +31,12 @@ Route::prefix('category')->group(function () {
   Route::get('/{id}', [CategoryController::class, 'show']);
   Route::put('/{id}', [CategoryController::class, 'update']);
   Route::delete('/{id}', [CategoryController::class, 'delete']);
+});
+
+Route::prefix('post')->group(function () {
+  Route::get('/', [PostController::class, 'index']);
+  Route::post('/', [PostController::class, 'store']);
+  Route::get('/{id}', [PostController::class, 'show']);
+  Route::put('/{id}', [PostController::class, 'update']);
+  Route::delete('/{id}', [PostController::class, 'delete']);
 });

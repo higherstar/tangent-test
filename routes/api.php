@@ -19,33 +19,33 @@ use App\Http\Controllers\CommentController;
 */
 
 Route::prefix('users')->group(function () {
-  Route::get('/', [UserController::class, 'index']);
-  Route::post('/', [UserController::class, 'store']);
-  Route::get('/{id}', [UserController::class, 'show']);
-  Route::put('/{id}', [UserController::class, 'update']);
-  Route::delete('/{id}', [UserController::class, 'delete']);
+  Route::get('/', [UserController::class, 'index'])->middleware('log.route');;
+  Route::post('/', [UserController::class, 'store'])->middleware('log.route');;
+  Route::get('/{id}', [UserController::class, 'show'])->middleware('log.route');;
+  Route::put('/{id}', [UserController::class, 'update'])->middleware('log.route');;
+  Route::delete('/{id}', [UserController::class, 'delete'])->middleware('log.route');;
 });
 
 Route::prefix('category')->group(function () {
-  Route::get('/', [CategoryController::class, 'index']);
-  Route::post('/', [CategoryController::class, 'store']);
-  Route::get('/{id}', [CategoryController::class, 'show']);
-  Route::put('/{id}', [CategoryController::class, 'update']);
-  Route::delete('/{id}', [CategoryController::class, 'delete']);
+  Route::get('/', [CategoryController::class, 'index'])->middleware('log.route');;
+  Route::post('/', [CategoryController::class, 'store'])->middleware('log.route');;
+  Route::get('/{id}', [CategoryController::class, 'show'])->middleware('log.route');;
+  Route::put('/{id}', [CategoryController::class, 'update'])->middleware('log.route');;
+  Route::delete('/{id}', [CategoryController::class, 'delete'])->middleware('log.route');;
 });
 
 Route::prefix('post')->group(function () {
-  Route::get('/', [PostController::class, 'index']);
-  Route::post('/', [PostController::class, 'store']);
-  Route::get('/{id}', [PostController::class, 'show']);
-  Route::put('/{id}', [PostController::class, 'update']);
-  Route::delete('/{id}', [PostController::class, 'delete']);
+  Route::get('/', [PostController::class, 'index'])->middleware('log.route');;
+  Route::post('/', [PostController::class, 'store'])->middleware('log.route');;
+  Route::get('/{id}', [PostController::class, 'show'])->middleware('log.route');;
+  Route::put('/{id}', [PostController::class, 'update'])->middleware('log.route');;
+  Route::delete('/{id}', [PostController::class, 'delete'])->middleware('log.route');;
 });
 
 Route::prefix('comment')->group(function () {
-  Route::get('/', [CommentController::class, 'index']);
-  Route::post('/', [CommentController::class, 'store']);
-  Route::get('/{id}', [CommentController::class, 'show']);
-  Route::put('/{id}', [CommentController::class, 'update']);
-  Route::delete('/{id}', [CommentController::class, 'delete']);
+  Route::get('/', [CommentController::class, 'index'])->middleware('log.route');;
+  Route::post('/', [CommentController::class, 'store'])->middleware('log.route');;
+  Route::get('/{id}', [CommentController::class, 'show'])->middleware('log.route');;
+  Route::put('/{id}', [CommentController::class, 'update'])->middleware('log.route');;
+  Route::delete('/{id}', [CommentController::class, 'delete'])->middleware('log.route');;
 });
